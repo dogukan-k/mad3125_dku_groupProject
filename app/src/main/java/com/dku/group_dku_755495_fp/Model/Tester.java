@@ -2,22 +2,22 @@ package com.dku.group_dku_755495_fp.Model;
 
 public class Tester extends Employee {
 
-    private String nbBugs ;
+    private double nbBugs ;
 
     public Tester(){
 
     }
 
-    public Tester(int year, String name, int birthYear, double monthlySalary, double rate, String nbBugs) {
+    public Tester(int year, String name, int birthYear, double monthlySalary, double rate, double nbBugs) {
         super(year, name, birthYear, monthlySalary, rate);
         this.nbBugs = nbBugs;
     }
 
-    public String getNbBugs() {
+    public double getNbBugs() {
         return nbBugs;
     }
 
-    public void setNbBugs(String nbBugs) {
+    public void setNbBugs(double nbBugs) {
         this.nbBugs = nbBugs;
     }
 
