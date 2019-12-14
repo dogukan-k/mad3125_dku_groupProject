@@ -1,8 +1,10 @@
-package com.dku.group_dku_755495_fp;
+package com.dku.group_dku_755495_fp.Controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.dku.group_dku_755495_fp.R;
 
 public class MainActivity extends AppCompatActivity {
 
