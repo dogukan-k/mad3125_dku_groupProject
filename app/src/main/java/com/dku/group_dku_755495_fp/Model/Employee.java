@@ -4,6 +4,7 @@ import java.util.Calendar;
 
 public class Employee {
 
+
     public static double GAIN_FACTOR_CLIENT = 500;
     public static double GAIN_FACTOR_TRAVEL = 100;
     public static double GAIN_FACTOR_ERROR = 10;
@@ -16,6 +17,10 @@ public class Employee {
     private int birthYear;
     private double monthlySalary;
     private double rate;
+
+    public Employee(){
+
+    }
 
     public Employee(int year, String name, int birthYear, double monthlySalary, double rate) {
         this.year = year;
