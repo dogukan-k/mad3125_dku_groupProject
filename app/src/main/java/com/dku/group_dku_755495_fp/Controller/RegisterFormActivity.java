@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -51,6 +52,9 @@ public class RegisterFormActivity extends AppCompatActivity {
     RadioButton motorBikeRadioButton;
     RadioButton carRadioButton;
 
+    Button button;
+
+
 
 
     List<String> employmentTypes = new ArrayList<>();
@@ -62,7 +66,13 @@ public class RegisterFormActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_form);
 
-        
+        firstName = findViewById(R.id.first_name);
+        lastName = findViewById(R.id.last_name);
+        birthYear = findViewById(R.id.birth_year);
+        monthlySalary = findViewById(R.id.monthly_salary);
+        occupationRate = findViewById(R.id.occupation_rate);
+        employeeId = findViewById(R.id.employee_id);
+        plateNumber = findViewById(R.id.plate_number);
 
         spinner = findViewById(R.id.spinner_employee_type);
         gainFactorInfoText = findViewById(R.id.txt_gain_factor_choosen);
@@ -86,6 +96,7 @@ public class RegisterFormActivity extends AppCompatActivity {
 
         vehicleColor = findViewById(R.id.spinner_vehicle_color);
 
+        button = findViewById(R.id.register_button);
 
         //Car Type / car type
         carTypeText.setVisibility(View.GONE);
