@@ -25,8 +25,15 @@ public class EmployeeDetailActivity extends AppCompatActivity {
 
         incomingDetail = getIntent().getExtras().getString("employee");
 
-        Log.d("ggg", "onCreate: "+incomingDetail);
 
 
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        detail.setText(incomingDetail);
     }
 }

@@ -382,6 +382,7 @@ public class RegisterFormActivity extends AppCompatActivity {
                             }
 
                             Employee.employeeList.add(employee);
+                            finish();
 
                         }
 
