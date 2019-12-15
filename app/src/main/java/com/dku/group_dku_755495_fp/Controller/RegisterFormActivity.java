@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -14,6 +15,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.dku.group_dku_755495_fp.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class RegisterFormActivity extends AppCompatActivity {
 
@@ -32,7 +36,8 @@ public class RegisterFormActivity extends AppCompatActivity {
     TextView textCarType;
     EditText vehicleModel;
 
-    String[] employmentTypes = {"Manager","Tester","Programmer"};
+    List<String> employmentTypes = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,16 +136,48 @@ public class RegisterFormActivity extends AppCompatActivity {
 
             }
         });
+        employmentTypes.add("Choose a type");
+        employmentTypes.add("Manager");
+        employmentTypes.add("Tester");
+        employmentTypes.add("Programmer");
+
+        ArrayAdapter adapter = new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item, employmentTypes);
+        spinner.setAdapter(adapter);
 
 
 
-
-        spinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //Employee type gain factor hide
-                gainFactorInfoText.setVisibility(View.VISIBLE);
-                gainFactorNumber.setVisibility(View.VISIBLE);
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                if(!spinner.getSelectedItem().equals("Choose a type")){
+                    //Employee type gain factor hide
+                    gainFactorInfoText.setVisibility(View.VISIBLE);
+                    gainFactorNumber.setVisibility(View.VISIBLE);
+
+
+                        switch(spinner.getSelectedItem().toString()) {
+                            case "Manager":
+                                gainFactorInfoText.setText("# clients");
+                                break;
+                            case "Tester":
+                                gainFactorInfoText.setText("# bugs");
+                                break;
+                            case "Programmer":
+                                gainFactorInfoText.setText("# projects");
+                                break;
+                            default:
+                                gainFactorInfoText.setText("# ");
+                        }
+
+                    }
+                }
+
+
+
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
         });
