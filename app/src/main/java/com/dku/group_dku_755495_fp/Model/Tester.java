@@ -25,4 +25,15 @@ public class Tester extends Employee {
     public String toDisplay() {
         return "";
     }
+
+    public double annualIncome(){
+        double result;
+
+        result = 12+getMonthlySalary();
+        result = (result * getRate()) / 100 ;
+        result = result + (getNbBugs()*GAIN_FACTOR_ERROR);
+
+
+        return result;
+    }
 }

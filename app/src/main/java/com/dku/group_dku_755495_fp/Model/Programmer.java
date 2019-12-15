@@ -25,4 +25,15 @@ public class Programmer extends Employee {
     public String toDisplay() {
         return super.toDisplay();
     }
+
+    public double annualIncome(){
+        double result;
+
+        result = 12+getMonthlySalary();
+        result = (result * getRate()) / 100 ;
+        result = result + (getNbProjects()*GAIN_FACTOR_PROJECTS);
+
+
+        return result;
+    }
 }

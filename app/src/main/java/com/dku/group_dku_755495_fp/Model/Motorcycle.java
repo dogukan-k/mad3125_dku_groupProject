@@ -24,6 +24,10 @@ public class Motorcycle extends Vehicle {
 
     @Override
     public String toDisplay() {
+        String result;
+
+        //result = "Employee has a motorcycle"
         return super.toDisplay();
+
     }
 }

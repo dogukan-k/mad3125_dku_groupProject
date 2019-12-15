@@ -147,7 +147,7 @@ public class RegisterFormActivity extends AppCompatActivity {
 
                     carType.setVisibility(View.GONE);
                     carTypeText.setVisibility(View.GONE);
-                    //sideCarRadioGroup.setVisibility(View.VISIBLE);
+
 
 
                     vehicle =  new Motorcycle();
@@ -287,6 +287,11 @@ public class RegisterFormActivity extends AppCompatActivity {
                 double rateOfOccupation = 100;
                 boolean idTakenBefore = false ;
 
+                //Set the values of vehicle accodording to radio button;
+
+
+
+
                 //Id chceck
                 for (int a = 0 ; a < Employee.employeeList.size() ; a++){
 
@@ -334,6 +339,30 @@ public class RegisterFormActivity extends AppCompatActivity {
                             }
 
 
+                            if(carRadioButton.isChecked()){
+                                vehicle.setMake(vehicleModel.getText().toString());
+                                vehicle.setPlate(plateNumber.getText().toString());
+                                vehicle.setColor(vehicleColor.getSelectedItem().toString());
+                                ((Car)vehicle).setType(carType.getText().toString());
+                            }
+
+
+                            if(motorBikeRadioButton.isChecked()){
+
+                                vehicle.setMake(vehicleModel.getText().toString());
+                                vehicle.setPlate(plateNumber.getText().toString());
+                                vehicle.setColor(vehicleColor.getSelectedItem().toString());
+                                vehicle.setCategory("");
+
+                                if(sideCarYes.isChecked()){
+                                    ((Motorcycle)vehicle).setHasSidecar(true);
+                                }
+                                else{
+                                    ((Motorcycle)vehicle).setHasSidecar(false);
+                                }
+
+
+                            }
 
 
 

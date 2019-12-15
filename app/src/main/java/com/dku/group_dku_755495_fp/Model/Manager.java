@@ -24,6 +24,25 @@ public class Manager extends Employee {
 
     @Override
     public String toDisplay() {
+
+        String result ;
+        //result = "Name:"+getName()+"\nAge:"+getAge()+"\n"+getVehicle().toDisplay()+""
+
+
         return "";
     }
+
+
+    public double annualIncome(){
+        double result;
+
+        result = 12+getMonthlySalary();
+        result = (result * getRate()) / 100 ;
+        result = result + (getNbClients()*GAIN_FACTOR_CLIENT);
+
+
+        return result;
+    }
+
+
 }

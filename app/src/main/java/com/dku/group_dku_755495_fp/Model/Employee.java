@@ -12,7 +12,6 @@ public class Employee {
 
 
     public static double GAIN_FACTOR_CLIENT = 500;
-    public static double GAIN_FACTOR_TRAVEL = 100;
     public static double GAIN_FACTOR_ERROR = 10;
     public static double GAIN_FACTOR_PROJECTS = 200;
 
@@ -105,6 +104,7 @@ public class Employee {
     public String toString() {
         return "Name:       "+getName()+"\nId:      "+getId();
     }
+
 }
 
 
