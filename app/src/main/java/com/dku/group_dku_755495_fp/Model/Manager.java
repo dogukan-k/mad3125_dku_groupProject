@@ -9,8 +9,8 @@ public class Manager extends Employee {
     }
 
 
-    public Manager( String name, int birthYear, double monthlySalary, double rate,Vehicle vehicle ,double nbClients) {
-        super( name, birthYear, monthlySalary, rate , vehicle);
+    public Manager( String name, int birthYear, double monthlySalary, double rate,Vehicle vehicle ,double nbClients , String id) {
+        super( name, birthYear, monthlySalary, rate , vehicle , id);
         this.nbClients = nbClients;
     }
 

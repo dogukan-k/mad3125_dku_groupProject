@@ -18,12 +18,13 @@ public class Employee {
     private double monthlySalary;
     private double rate;
     private  Vehicle vehicle ;
+    private String id;
 
     public Employee(){
 
     }
 
-    public Employee( String name, int birthYear, double monthlySalary, double rate , Vehicle vehicle) {
+    public Employee( String name, int birthYear, double monthlySalary, double rate , Vehicle vehicle , String id) {
 
         this.name = name;
         this.age = year - birthYear ;
@@ -31,6 +32,7 @@ public class Employee {
         this.monthlySalary = monthlySalary;
         this.rate = rate;
         this.vehicle = vehicle ;
+        this.id = id;
     }
 
 

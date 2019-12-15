@@ -280,20 +280,25 @@ public class RegisterFormActivity extends AppCompatActivity {
 //                    Log.d("ggg", "onItemSelected: moto"+((Motorcycle)vehicle).isHasSidecar());
 //                }
 
+                
+
+                //Field Check...
+             if(!firstName.getText().toString().equals("") && !lastName.getText().toString().equals("") && !birthYear.getText().toString().equals("") && !monthlySalary.getText().toString().equals("") && !occupationRate.getText().toString().equals("") && !employeeId.getText().toString().equals("") && !spinner.getSelectedItem().toString().equals("Choose a type") && (carRadioButton.isChecked() || motorBikeRadioButton.isChecked()) && !vehicleModel.getText().toString().equals("") && !plateNumber.getText().toString().equals("") && !vehicleColor.getSelectedItem().toString().equals("Choose a color")){
+
+                }
+
                 switch(selectedEmployeeType) {
                     case "Manager":
-                        //employee = new Manager("ss",)
+                        employee = new Manager(firstName.getText()+" "+lastName.getText() , Integer.parseInt(birthYear.getText().toString()), Double.parseDouble(monthlySalary.getText().toString()),Double.parseDouble(occupationRate.getText().toString()) , vehicle , Double.parseDouble(gainFactorNumber.getText().toString()) , employeeId.getText().toString());
                         break;
                     case "Tester":
-                        gainFactorInfoText.setText("# bugs");
-                        selectedEmployeeType = "Tester";
+                        employee = new Tester(firstName.getText()+" "+lastName.getText() , Integer.parseInt(birthYear.getText().toString()), Double.parseDouble(monthlySalary.getText().toString()),Double.parseDouble(occupationRate.getText().toString()) , vehicle , Double.parseDouble(gainFactorNumber.getText().toString()) , employeeId.getText().toString());
                         break;
                     case "Programmer":
-                        gainFactorInfoText.setText("# projects");
-                        selectedEmployeeType = "Programmer";
+                        employee = new Programmer(firstName.getText()+" "+lastName.getText() , Integer.parseInt(birthYear.getText().toString()), Double.parseDouble(monthlySalary.getText().toString()),Double.parseDouble(occupationRate.getText().toString()) , vehicle , Double.parseDouble(gainFactorNumber.getText().toString()) , employeeId.getText().toString());
                         break;
                     default:
-                        gainFactorInfoText.setText("# ");
+
                 }
 
 
