@@ -309,4 +309,26 @@
         app:layout_constraintStart_toStartOf="@+id/employee_id"
         app:layout_constraintTop_toBottomOf="@+id/radio_group_side_car" />
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Plate Number"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/editText"
+        app:layout_constraintStart_toStartOf="@+id/txt_vehicle_model"
+        app:layout_constraintTop_toTopOf="@+id/editText" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/darker_gray"
+        android:ems="10"
+        android:hint="plate number"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/vehicle_model"
+        app:layout_constraintTop_toBottomOf="@+id/vehicle_model" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
