@@ -281,22 +281,41 @@ public class RegisterFormActivity extends AppCompatActivity {
 //                    Log.d("ggg", "onItemSelected: moto"+((Motorcycle)vehicle).isHasSidecar());
 //                }
 
+                double rateOfOccupation = 100;
 
 
                 //Field Check...
-             if(!firstName.getText().toString().equals("") && !lastName.getText().toString().equals("") && !birthYear.getText().toString().equals("") && !monthlySalary.getText().toString().equals("") && !occupationRate.getText().toString().equals("") && !employeeId.getText().toString().equals("") && !spinner.getSelectedItem().toString().equals("Choose a type") && (carRadioButton.isChecked() || motorBikeRadioButton.isChecked()) && !vehicleModel.getText().toString().equals("") && !plateNumber.getText().toString().equals("") && !vehicleColor.getSelectedItem().toString().equals("Choose a color") && !gainFactorNumber.getText().toString().equals("")){
+             if(!firstName.getText().toString().equals("") && !lastName.getText().toString().equals("") && !birthYear.getText().toString().equals("") && !monthlySalary.getText().toString().equals("")  && !employeeId.getText().toString().equals("") && !spinner.getSelectedItem().toString().equals("Choose a type") && (carRadioButton.isChecked() || motorBikeRadioButton.isChecked()) && !vehicleModel.getText().toString().equals("") && !plateNumber.getText().toString().equals("") && !vehicleColor.getSelectedItem().toString().equals("Choose a color") && !gainFactorNumber.getText().toString().equals("")){
 
                         if( (carRadioButton.isChecked() && !carType.getText().toString().equals(""))   || (motorBikeRadioButton.isChecked() &&  (sideCarNo.isChecked() || sideCarYes.isChecked()))){
 
+                            if(!occupationRate.getText().toString().equals("")){
+                                double temp = Integer.parseInt(occupationRate.getText().toString());
+
+                                if(temp <= 10){
+                                    rateOfOccupation = 10;
+                                }
+
+                                if(temp >10 || temp <=100){
+                                    rateOfOccupation = temp ;
+                                }
+
+                                if(temp > 100){
+                                    rateOfOccupation = 100;
+                                }
+                            }
+
+
+
                             switch(selectedEmployeeType) {
                                 case "Manager":
-                                    employee = new Manager(firstName.getText()+" "+lastName.getText() , Integer.parseInt(birthYear.getText().toString()), Double.parseDouble(monthlySalary.getText().toString()),Double.parseDouble(occupationRate.getText().toString()) , vehicle , Double.parseDouble(gainFactorNumber.getText().toString()) , employeeId.getText().toString());
+                                    employee = new Manager(firstName.getText()+" "+lastName.getText() , Integer.parseInt(birthYear.getText().toString()), Double.parseDouble(monthlySalary.getText().toString()),rateOfOccupation , vehicle , Double.parseDouble(gainFactorNumber.getText().toString()) , employeeId.getText().toString());
                                     break;
                                 case "Tester":
-                                    employee = new Tester(firstName.getText()+" "+lastName.getText() , Integer.parseInt(birthYear.getText().toString()), Double.parseDouble(monthlySalary.getText().toString()),Double.parseDouble(occupationRate.getText().toString()) , vehicle , Double.parseDouble(gainFactorNumber.getText().toString()) , employeeId.getText().toString());
+                                    employee = new Tester(firstName.getText()+" "+lastName.getText() , Integer.parseInt(birthYear.getText().toString()), Double.parseDouble(monthlySalary.getText().toString()),rateOfOccupation , vehicle , Double.parseDouble(gainFactorNumber.getText().toString()) , employeeId.getText().toString());
                                     break;
                                 case "Programmer":
-                                    employee = new Programmer(firstName.getText()+" "+lastName.getText() , Integer.parseInt(birthYear.getText().toString()), Double.parseDouble(monthlySalary.getText().toString()),Double.parseDouble(occupationRate.getText().toString()) , vehicle , Double.parseDouble(gainFactorNumber.getText().toString()) , employeeId.getText().toString());
+                                    employee = new Programmer(firstName.getText()+" "+lastName.getText() , Integer.parseInt(birthYear.getText().toString()), Double.parseDouble(monthlySalary.getText().toString()),rateOfOccupation , vehicle , Double.parseDouble(gainFactorNumber.getText().toString()) , employeeId.getText().toString());
                                     break;
                                 default:
 
