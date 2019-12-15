@@ -26,6 +26,7 @@ import com.dku.group_dku_755495_fp.Model.Vehicle;
 import com.dku.group_dku_755495_fp.R;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class RegisterFormActivity extends AppCompatActivity {
@@ -70,6 +71,8 @@ public class RegisterFormActivity extends AppCompatActivity {
 
     List<String> employmentTypes = new ArrayList<>();
     List<String> colors = new ArrayList<>();
+
+    int year = Calendar.getInstance().get(Calendar.YEAR);
 
 
     @Override
@@ -292,9 +295,14 @@ public class RegisterFormActivity extends AppCompatActivity {
                     }
                 }
 
+                //Id verification
+                if(idTakenBefore == true){
+                    Toast.makeText(RegisterFormActivity.this , "Existing ID!" , Toast.LENGTH_SHORT).show();
+                }
 
-                if{
-
+                //Birth year verification
+                if(Integer.parseInt(birthYear.getText().toString()) >1900 && Integer.parseInt(birthYear.getText().toString()) > year ){
+                    Toast.makeText(RegisterFormActivity.this , "Birth year can't be less than 1900 and greater than current year" , Toast.LENGTH_SHORT).show();
                 }
 
                 //Field Check...
