@@ -282,12 +282,28 @@ public class RegisterFormActivity extends AppCompatActivity {
 //                }
 
                 double rateOfOccupation = 100;
+                boolean idTakenBefore = false ;
 
+                //Id chceck
+                for (int a = 0 ; a < Employee.employeeList.size() ; a++){
+
+                    if(Employee.employeeList.get(a).equals(employeeId.getText().toString())){
+                        idTakenBefore = true;
+                    }
+                }
+
+
+                if{
+
+                }
 
                 //Field Check...
-             if(!firstName.getText().toString().equals("") && !lastName.getText().toString().equals("") && !birthYear.getText().toString().equals("") && !monthlySalary.getText().toString().equals("")  && !employeeId.getText().toString().equals("") && !spinner.getSelectedItem().toString().equals("Choose a type") && (carRadioButton.isChecked() || motorBikeRadioButton.isChecked()) && !vehicleModel.getText().toString().equals("") && !plateNumber.getText().toString().equals("") && !vehicleColor.getSelectedItem().toString().equals("Choose a color") && !gainFactorNumber.getText().toString().equals("")){
+             else if(!firstName.getText().toString().equals("") && !lastName.getText().toString().equals("") && !birthYear.getText().toString().equals("") && !monthlySalary.getText().toString().equals("")  && !employeeId.getText().toString().equals("") && !spinner.getSelectedItem().toString().equals("Choose a type") && (carRadioButton.isChecked() || motorBikeRadioButton.isChecked()) && !vehicleModel.getText().toString().equals("") && !plateNumber.getText().toString().equals("") && !vehicleColor.getSelectedItem().toString().equals("Choose a color") && !gainFactorNumber.getText().toString().equals("")){
 
                         if( (carRadioButton.isChecked() && !carType.getText().toString().equals(""))   || (motorBikeRadioButton.isChecked() &&  (sideCarNo.isChecked() || sideCarYes.isChecked()))){
+
+
+                            //Occupation rate check
 
                             if(!occupationRate.getText().toString().equals("")){
                                 double temp = Integer.parseInt(occupationRate.getText().toString());
@@ -304,6 +320,8 @@ public class RegisterFormActivity extends AppCompatActivity {
                                     rateOfOccupation = 100;
                                 }
                             }
+
+
 
 
 
