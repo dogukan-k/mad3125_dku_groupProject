@@ -23,6 +23,13 @@ public class Car extends  Vehicle {
 
     @Override
     public String toDisplay() {
-        return super.toDisplay();
+
+        String result;
+
+        result = "Employee has a car"+"\n-Model:"+getMake()+"\nPlate:"+getPlate()+"\nColor:"+getColor()+"\nType"+getType();
+        return result;
+
     }
+
+
 }
