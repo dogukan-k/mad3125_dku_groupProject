@@ -290,7 +290,7 @@ public class RegisterFormActivity extends AppCompatActivity {
                 //Id chceck
                 for (int a = 0 ; a < Employee.employeeList.size() ; a++){
 
-                    if(!employeeId.getText().toString().equals("") &&Employee.employeeList.get(a).equals(employeeId.getText().toString())){
+                    if(!employeeId.getText().toString().equals("") && Employee.employeeList.get(a).getId().equals(employeeId.getText().toString())){
                         idTakenBefore = true;
                     }
                 }

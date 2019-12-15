@@ -199,7 +199,7 @@
         android:background="@android:color/darker_gray"
         android:ems="10"
         android:hint="number"
-        android:inputType="textPersonName"
+        android:inputType="phone"
         app:layout_constraintEnd_toEndOf="@+id/spinner_employee_type"
         app:layout_constraintTop_toBottomOf="@+id/spinner_employee_type" />
 
