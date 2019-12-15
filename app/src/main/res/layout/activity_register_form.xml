@@ -339,8 +339,8 @@
         android:text="Vehicle Color"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="@+id/spinner_vehicle_color"
-        app:layout_constraintTop_toTopOf="@+id/spinner_vehicle_color"
-        tools:layout_editor_absoluteX="18dp" />
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="@+id/spinner_vehicle_color" />
 
     <Spinner
         android:id="@+id/spinner_vehicle_color"
@@ -350,5 +350,18 @@
         app:layout_constraintEnd_toEndOf="@+id/plate_number"
         app:layout_constraintStart_toStartOf="@+id/plate_number"
         app:layout_constraintTop_toBottomOf="@+id/plate_number" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:text="REGISTER"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

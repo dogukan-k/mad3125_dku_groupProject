@@ -21,21 +21,37 @@ import java.util.List;
 
 public class RegisterFormActivity extends AppCompatActivity {
 
-    Spinner spinner;
+    EditText firstName;
+    EditText lastName;
+    EditText birthYear;
+    EditText monthlySalary;
+    EditText occupationRate;
+    EditText employeeId;
     EditText gainFactorNumber;
+    EditText carType;
+    EditText vehicleModel;
+    EditText plateNumber;
+
+
+
+    Spinner spinner;
+    Spinner vehicleColor;
+
     TextView gainFactorInfoText;
-    RadioButton motorBikeRadioButton;
-    RadioButton carRadioButton;
+    TextView carTypeText;
+    TextView txtSideCar;
+    TextView textCarType;
+
+
     RadioGroup sideCarRadioGroup;
     RadioGroup vehicleRadioGroup;
     RadioButton sideCarYes;
     RadioButton sideCarNo;
-    TextView carTypeText;
-    EditText carType;
-    TextView txtSideCar;
-    TextView textCarType;
-    EditText vehicleModel;
-    Spinner vehicleColor;
+
+    RadioButton motorBikeRadioButton;
+    RadioButton carRadioButton;
+
+
 
     List<String> employmentTypes = new ArrayList<>();
     List<String> colors = new ArrayList<>();
@@ -45,6 +61,8 @@ public class RegisterFormActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_form);
+
+        
 
         spinner = findViewById(R.id.spinner_employee_type);
         gainFactorInfoText = findViewById(R.id.txt_gain_factor_choosen);
@@ -186,7 +204,7 @@ public class RegisterFormActivity extends AppCompatActivity {
             }
         });
 
-
+        colors.add("Choose a color");
         colors.add("Red");
         colors.add("Blue");
         colors.add("Yellow");
