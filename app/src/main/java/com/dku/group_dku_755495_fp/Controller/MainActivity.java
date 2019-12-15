@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     ListView listView;
     Button addButton;
 
+    ArrayAdapter<Employee> itemsAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +49,33 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
+                //Get id from list view;
+                //For searhed objects
+
+                Object obj = adapterView.getAdapter().getItem(position);
+                String value = obj.toString();
+                String trim = value.substring(value.lastIndexOf(":") + 1);
+
+                Log.d("ggg", "onItemClick: "+trim.replaceAll("\\s",""));
+                Employee employee = null;
+
+                for (int i = 0 ; i<Employee.employeeList.size() ; i++){
+
+                    if(Employee.employeeList.get(i).getId().equals(trim.replaceAll("\\s","")));
+                    employee = Employee.employeeList.get(i);
+
+                }
+
+
+
                 Intent intent = new Intent(MainActivity.this, EmployeeDetailActivity.class);
 
-                intent.putExtra("employee",Employee.employeeList.get(position).toDisplay());
+
+
+                intent.putExtra("employee", employee.toDisplay());
                 startActivity(intent);
+
+
 
 
 
@@ -60,12 +85,12 @@ public class MainActivity extends AppCompatActivity {
         searchBar.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                
+
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
+                MainActivity.this.itemsAdapter.getFilter().filter(charSequence);
             }
 
             @Override
@@ -80,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
 
-        ArrayAdapter<Employee> itemsAdapter = new ArrayAdapter<Employee>(this, android.R.layout.simple_list_item_1, Employee.employeeList);
+        itemsAdapter = new ArrayAdapter<Employee>(this, android.R.layout.simple_list_item_1, Employee.employeeList);
         listView.setAdapter(itemsAdapter);
     }
 
