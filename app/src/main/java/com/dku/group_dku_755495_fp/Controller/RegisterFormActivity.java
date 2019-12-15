@@ -35,6 +35,7 @@ public class RegisterFormActivity extends AppCompatActivity {
     TextView txtSideCar;
     TextView textCarType;
     EditText vehicleModel;
+    Spinner vehicleColor;
 
     List<String> employmentTypes = new ArrayList<>();
 
@@ -63,6 +64,8 @@ public class RegisterFormActivity extends AppCompatActivity {
 
         textCarType = findViewById(R.id.txt_car_type);
         vehicleModel = findViewById(R.id.vehicle_model);
+
+        vehicleColor = findViewById(R.id.spinner_vehicle_color);
 
 
         //Car Type / car type
