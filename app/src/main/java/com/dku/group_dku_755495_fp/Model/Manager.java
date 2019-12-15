@@ -26,10 +26,10 @@ public class Manager extends Employee {
     public String toDisplay() {
 
         String result ;
-        //result = "Name:"+getName()+"\nAge:"+getAge()+"\n"+getVehicle().toDisplay()+""
+        result = "Name:"+getName()+"\nAge:"+getAge()+"\n"+getVehicle().toDisplay()+"\nOccupation Rate: "+getRate() +"%\nAnnual income: $ "+annualIncome()+"\nHe/She has brought "+getNbClients()+" new clients";
 
 
-        return "";
+        return result;
     }
 
 
