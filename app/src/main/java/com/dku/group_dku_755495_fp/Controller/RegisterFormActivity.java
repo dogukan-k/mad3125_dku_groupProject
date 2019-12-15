@@ -38,6 +38,7 @@ public class RegisterFormActivity extends AppCompatActivity {
     Spinner vehicleColor;
 
     List<String> employmentTypes = new ArrayList<>();
+    List<String> colors = new ArrayList<>();
 
 
     @Override
@@ -178,6 +179,35 @@ public class RegisterFormActivity extends AppCompatActivity {
 
 
 
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+        colors.add("Red");
+        colors.add("Blue");
+        colors.add("Yellow");
+        colors.add("Green");
+        colors.add("Orange");
+        colors.add("Purple");
+        colors.add("Pink");
+        colors.add("Brown");
+        colors.add("White");
+        colors.add("Black");
+        colors.add("Beige");
+
+        ArrayAdapter colorAdapter = new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item, colors);
+        vehicleColor.setAdapter(colorAdapter);
+
+
+        vehicleColor.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+            }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
