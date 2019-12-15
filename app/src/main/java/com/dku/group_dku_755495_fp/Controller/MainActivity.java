@@ -43,7 +43,17 @@ public class MainActivity extends AppCompatActivity {
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+
+                Intent intent = new Intent(MainActivity.this, EmployeeDetailActivity.class);
+
+                Bundle bundle = new Bundle();
+                
+                bundle.putSerializable("employee", Employee.employeeList.get(position));
+
+                intent.putExtras(bundle);
+
+                startActivity(intent);
 
 
 
