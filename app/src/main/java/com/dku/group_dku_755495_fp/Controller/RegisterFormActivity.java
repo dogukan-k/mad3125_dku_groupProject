@@ -344,6 +344,7 @@ public class RegisterFormActivity extends AppCompatActivity {
                                 vehicle.setPlate(plateNumber.getText().toString());
                                 vehicle.setColor(vehicleColor.getSelectedItem().toString());
                                 ((Car)vehicle).setType(carType.getText().toString());
+                                vehicle.setCategory("");
                             }
 
 
