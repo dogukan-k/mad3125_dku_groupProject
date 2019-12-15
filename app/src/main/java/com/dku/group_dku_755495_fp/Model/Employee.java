@@ -1,8 +1,12 @@
 package com.dku.group_dku_755495_fp.Model;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class Employee {
+
+    public static List<Employee> employeeList= new ArrayList<Employee>();
 
 
     public static double GAIN_FACTOR_CLIENT = 500;
