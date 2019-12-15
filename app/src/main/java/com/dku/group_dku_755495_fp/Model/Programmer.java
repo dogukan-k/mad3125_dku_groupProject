@@ -23,7 +23,10 @@ public class Programmer extends Employee {
 
     @Override
     public String toDisplay() {
-        return super.toDisplay();
+        String result ;
+        result = "Name:"+getName()+"\nAge:"+getAge()+"\n"+getVehicle().toDisplay()+"\nOccupation Rate: "+getRate() +"%\nAnnual income: $ "+annualIncome()+"\nHe/She has completed "+getNbProjects()+" projects";
+
+        return result;
     }
 
     public double annualIncome(){
