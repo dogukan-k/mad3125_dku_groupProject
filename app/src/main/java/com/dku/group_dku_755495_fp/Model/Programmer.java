@@ -8,8 +8,8 @@ public class Programmer extends Employee {
 
     }
 
-    public Programmer(int year, String name, int birthYear, double monthlySalary, double rate, double nbProjects) {
-        super(year, name, birthYear, monthlySalary, rate);
+    public Programmer( String name, int birthYear, double monthlySalary, double rate,Vehicle vehicle ,double nbProjects) {
+        super(name, birthYear, monthlySalary, rate , vehicle);
         this.nbProjects = nbProjects;
     }
 

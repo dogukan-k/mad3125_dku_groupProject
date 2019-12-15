@@ -15,6 +15,13 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.dku.group_dku_755495_fp.Model.Car;
+import com.dku.group_dku_755495_fp.Model.Employee;
+import com.dku.group_dku_755495_fp.Model.Manager;
+import com.dku.group_dku_755495_fp.Model.Motorcycle;
+import com.dku.group_dku_755495_fp.Model.Programmer;
+import com.dku.group_dku_755495_fp.Model.Tester;
+import com.dku.group_dku_755495_fp.Model.Vehicle;
 import com.dku.group_dku_755495_fp.R;
 
 import java.util.ArrayList;
@@ -54,6 +61,9 @@ public class RegisterFormActivity extends AppCompatActivity {
 
     Button button;
 
+    Employee employee ;
+    Vehicle vehicle;
+    String selectedEmployeeType;
 
 
 
@@ -136,6 +146,9 @@ public class RegisterFormActivity extends AppCompatActivity {
                     //sideCarRadioGroup.setVisibility(View.VISIBLE);
 
 
+                    vehicle =  new Motorcycle();
+
+
                 }
 
 
@@ -153,7 +166,7 @@ public class RegisterFormActivity extends AppCompatActivity {
                 Log.d("ggg", "onCheckedChangedcar "+carRadioButton.isChecked());
 
                 if(carRadioButton.isChecked()==true){
-                    Log.d("ggg", "onCheckedChanged:caricerde "+carRadioButton.isChecked());
+
                     //sideCarRadioGroup.setVisibility(View.GONE);
                     //txtSideCar.setVisibility(View.GONE);
                     carType.setVisibility(View.VISIBLE);
@@ -161,6 +174,9 @@ public class RegisterFormActivity extends AppCompatActivity {
                     sideCarYes.setVisibility(View.GONE);
                     sideCarNo.setVisibility(View.GONE);
                     txtSideCar.setVisibility(View.GONE);
+
+
+                    vehicle =  new Car();
 
             }
 
@@ -183,21 +199,30 @@ public class RegisterFormActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
+
                 if(!spinner.getSelectedItem().equals("Choose a type")){
+
+
+
                     //Employee type gain factor hide
                     gainFactorInfoText.setVisibility(View.VISIBLE);
                     gainFactorNumber.setVisibility(View.VISIBLE);
 
 
+
+
                         switch(spinner.getSelectedItem().toString()) {
                             case "Manager":
                                 gainFactorInfoText.setText("# clients");
+                                selectedEmployeeType = "Manager";
                                 break;
                             case "Tester":
                                 gainFactorInfoText.setText("# bugs");
+                                selectedEmployeeType = "Tester";
                                 break;
                             case "Programmer":
                                 gainFactorInfoText.setText("# projects");
+                                selectedEmployeeType = "Programmer";
                                 break;
                             default:
                                 gainFactorInfoText.setText("# ");
@@ -247,7 +272,32 @@ public class RegisterFormActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+
+//                if(carRadioButton.isChecked()){
+//                    Log.d("ggg", "onItemSelected: car"+((Car)vehicle).getType());
+//                }
+//                if(motorBikeRadioButton.isChecked()){
+//                    Log.d("ggg", "onItemSelected: moto"+((Motorcycle)vehicle).isHasSidecar());
+//                }
+
+                switch(selectedEmployeeType) {
+                    case "Manager":
+                        //employee = new Manager("ss",)
+                        break;
+                    case "Tester":
+                        gainFactorInfoText.setText("# bugs");
+                        selectedEmployeeType = "Tester";
+                        break;
+                    case "Programmer":
+                        gainFactorInfoText.setText("# projects");
+                        selectedEmployeeType = "Programmer";
+                        break;
+                    default:
+                        gainFactorInfoText.setText("# ");
+                }
+
+
+
             }
         });
 

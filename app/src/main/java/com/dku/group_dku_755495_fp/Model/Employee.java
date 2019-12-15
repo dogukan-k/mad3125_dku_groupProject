@@ -17,27 +17,23 @@ public class Employee {
     private int birthYear;
     private double monthlySalary;
     private double rate;
+    private  Vehicle vehicle ;
 
     public Employee(){
 
     }
 
-    public Employee(int year, String name, int birthYear, double monthlySalary, double rate) {
-        this.year = year;
+    public Employee( String name, int birthYear, double monthlySalary, double rate , Vehicle vehicle) {
+
         this.name = name;
         this.age = year - birthYear ;
         this.birthYear = birthYear;
         this.monthlySalary = monthlySalary;
         this.rate = rate;
+        this.vehicle = vehicle ;
     }
 
-    public int getYear() {
-        return year;
-    }
 
-    public void setYear(int year) {
-        this.year = year;
-    }
 
     public String getName() {
         return name;
@@ -74,6 +70,16 @@ public class Employee {
     public void setRate(double rate) {
         this.rate = rate;
     }
+
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
 
     public String toDisplay(){
         return "";
