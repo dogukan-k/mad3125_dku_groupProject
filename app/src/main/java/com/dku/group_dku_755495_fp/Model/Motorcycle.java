@@ -25,9 +25,14 @@ public class Motorcycle extends Vehicle {
     @Override
     public String toDisplay() {
         String result;
+        String sideCarResult="without a side car";
 
-        //result = "Employee has a motorcycle"
-        return super.toDisplay();
+        if(isHasSidecar()){
+            sideCarResult="with a side car";
+        }
+
+        result = "Employee has a motorcycle"+"\n-Model:"+getMake()+"\nPlate:"+getPlate()+"\nColor:"+getColor()+"\n"+sideCarResult;
+        return result;
 
     }
 }
