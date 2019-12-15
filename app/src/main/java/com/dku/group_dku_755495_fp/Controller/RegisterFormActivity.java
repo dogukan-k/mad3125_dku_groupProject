@@ -280,10 +280,14 @@ public class RegisterFormActivity extends AppCompatActivity {
 //                    Log.d("ggg", "onItemSelected: moto"+((Motorcycle)vehicle).isHasSidecar());
 //                }
 
-                
+
 
                 //Field Check...
              if(!firstName.getText().toString().equals("") && !lastName.getText().toString().equals("") && !birthYear.getText().toString().equals("") && !monthlySalary.getText().toString().equals("") && !occupationRate.getText().toString().equals("") && !employeeId.getText().toString().equals("") && !spinner.getSelectedItem().toString().equals("Choose a type") && (carRadioButton.isChecked() || motorBikeRadioButton.isChecked()) && !vehicleModel.getText().toString().equals("") && !plateNumber.getText().toString().equals("") && !vehicleColor.getSelectedItem().toString().equals("Choose a color")){
+
+                        if( (carRadioButton.isChecked() && !carType.getText().toString().equals(""))   || (motorBikeRadioButton.isChecked() &&  (sideCarNo.isChecked() || sideCarYes.isChecked()))){
+
+                        }
 
                 }
 
