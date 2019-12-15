@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.dku.group_dku_755495_fp.Model.Employee;
 import com.dku.group_dku_755495_fp.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,6 +35,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        
 
     }
 }

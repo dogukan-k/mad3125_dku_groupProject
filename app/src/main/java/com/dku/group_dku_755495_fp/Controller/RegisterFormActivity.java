@@ -14,6 +14,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dku.group_dku_755495_fp.Model.Car;
 import com.dku.group_dku_755495_fp.Model.Employee;
@@ -283,7 +284,7 @@ public class RegisterFormActivity extends AppCompatActivity {
 
 
                 //Field Check...
-             if(!firstName.getText().toString().equals("") && !lastName.getText().toString().equals("") && !birthYear.getText().toString().equals("") && !monthlySalary.getText().toString().equals("") && !occupationRate.getText().toString().equals("") && !employeeId.getText().toString().equals("") && !spinner.getSelectedItem().toString().equals("Choose a type") && (carRadioButton.isChecked() || motorBikeRadioButton.isChecked()) && !vehicleModel.getText().toString().equals("") && !plateNumber.getText().toString().equals("") && !vehicleColor.getSelectedItem().toString().equals("Choose a color")){
+             if(!firstName.getText().toString().equals("") && !lastName.getText().toString().equals("") && !birthYear.getText().toString().equals("") && !monthlySalary.getText().toString().equals("") && !occupationRate.getText().toString().equals("") && !employeeId.getText().toString().equals("") && !spinner.getSelectedItem().toString().equals("Choose a type") && (carRadioButton.isChecked() || motorBikeRadioButton.isChecked()) && !vehicleModel.getText().toString().equals("") && !plateNumber.getText().toString().equals("") && !vehicleColor.getSelectedItem().toString().equals("Choose a color") && !gainFactorNumber.getText().toString().equals("")){
 
                         if( (carRadioButton.isChecked() && !carType.getText().toString().equals(""))   || (motorBikeRadioButton.isChecked() &&  (sideCarNo.isChecked() || sideCarYes.isChecked()))){
 
@@ -301,11 +302,16 @@ public class RegisterFormActivity extends AppCompatActivity {
 
                             }
 
+                            Employee.employeeList.add(employee);
+
                         }
 
                 }
 
 
+             else {
+                 Toast.makeText(RegisterFormActivity.this , "Please check the fields" , Toast.LENGTH_SHORT).show();
+             }
 
 
 
