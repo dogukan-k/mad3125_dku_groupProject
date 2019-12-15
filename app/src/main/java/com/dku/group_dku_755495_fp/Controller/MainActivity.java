@@ -47,12 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(MainActivity.this, EmployeeDetailActivity.class);
 
-                Bundle bundle = new Bundle();
-                
-                bundle.putSerializable("employee", Employee.employeeList.get(position));
-
-                intent.putExtras(bundle);
-
+                intent.putExtra("employee",Employee.employeeList.get(position).toDisplay());
                 startActivity(intent);
 
 

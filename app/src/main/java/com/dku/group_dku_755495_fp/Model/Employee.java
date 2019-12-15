@@ -7,7 +7,7 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 
-public class Employee implements Serializable {
+public class Employee  {
 
     public static List<Employee> employeeList= new ArrayList<Employee>();
 

@@ -31,7 +31,7 @@ public class Motorcycle extends Vehicle {
             sideCarResult="with a side car";
         }
 
-        result = "Employee has a motorcycle"+"\n-Model:"+getMake()+"\nPlate:"+getPlate()+"\nColor:"+getColor()+"\n"+sideCarResult;
+        result = "Employee has a motorcycle"+"\n-Model:"+getMake()+"\n-Plate:"+getPlate()+"\n-Color:"+getColor()+"\n"+sideCarResult;
         return result;
 
     }

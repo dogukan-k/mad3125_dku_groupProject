@@ -26,7 +26,7 @@ public class Car extends  Vehicle {
 
         String result;
 
-        result = "Employee has a car"+"\n-Model:"+getMake()+"\nPlate:"+getPlate()+"\nColor:"+getColor()+"\nType"+getType();
+        result = "Employee has a car"+"\n-Model:"+getMake()+"\n-Plate:"+getPlate()+"\n-Color:"+getColor()+"\n-Type"+getType();
         return result;
 
     }
