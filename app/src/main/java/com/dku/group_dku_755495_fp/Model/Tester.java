@@ -23,7 +23,10 @@ public class Tester extends Employee {
 
     @Override
     public String toDisplay() {
-        return "";
+        String result ;
+        result = "Name:"+getName()+"\nAge:"+getAge()+"\n"+getVehicle().toDisplay()+"\nOccupation Rate: "+getRate() +"%\nAnnual income: $ "+annualIncome()+"\nHe/She corrected "+getNbBugs()+" bugs";
+
+        return result;
     }
 
     public double annualIncome(){
