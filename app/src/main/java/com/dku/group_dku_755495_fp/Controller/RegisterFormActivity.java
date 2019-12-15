@@ -300,7 +300,7 @@ public class RegisterFormActivity extends AppCompatActivity {
                                     rateOfOccupation = temp ;
                                 }
 
-                                if(temp > 100){
+                                if(temp >  100){
                                     rateOfOccupation = 100;
                                 }
                             }
