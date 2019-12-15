@@ -290,7 +290,7 @@ public class RegisterFormActivity extends AppCompatActivity {
                 //Id chceck
                 for (int a = 0 ; a < Employee.employeeList.size() ; a++){
 
-                    if(Employee.employeeList.get(a).equals(employeeId.getText().toString())){
+                    if(!employeeId.getText().toString().equals("") &&Employee.employeeList.get(a).equals(employeeId.getText().toString())){
                         idTakenBefore = true;
                     }
                 }
@@ -301,7 +301,7 @@ public class RegisterFormActivity extends AppCompatActivity {
                 }
 
                 //Birth year verification
-                if(Integer.parseInt(birthYear.getText().toString()) >1900 && Integer.parseInt(birthYear.getText().toString()) > year ){
+                if(!birthYear.getText().toString().equals("") && Integer.parseInt(birthYear.getText().toString()) >1900 && Integer.parseInt(birthYear.getText().toString()) > year ){
                     Toast.makeText(RegisterFormActivity.this , "Birth year can't be less than 1900 and greater than current year" , Toast.LENGTH_SHORT).show();
                 }
 
