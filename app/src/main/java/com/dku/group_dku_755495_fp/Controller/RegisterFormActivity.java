@@ -297,17 +297,21 @@ public class RegisterFormActivity extends AppCompatActivity {
 
                 //Id verification
                 if(idTakenBefore == true){
+                    Log.d("ggg", "onClick: giriyoridtakenbefore");
                     Toast.makeText(RegisterFormActivity.this , "Existing ID!" , Toast.LENGTH_SHORT).show();
+                    return;
+
                 }
 
                 //Birth year verification
                 if(!birthYear.getText().toString().equals("") && Integer.parseInt(birthYear.getText().toString()) >1900 && Integer.parseInt(birthYear.getText().toString()) > year ){
                     Toast.makeText(RegisterFormActivity.this , "Birth year can't be less than 1900 and greater than current year" , Toast.LENGTH_SHORT).show();
+                    Log.d("ggg", "onClick: giriyorbirthyear");
                 }
 
                 //Field Check...
              else if(!firstName.getText().toString().equals("") && !lastName.getText().toString().equals("") && !birthYear.getText().toString().equals("") && !monthlySalary.getText().toString().equals("")  && !employeeId.getText().toString().equals("") && !spinner.getSelectedItem().toString().equals("Choose a type") && (carRadioButton.isChecked() || motorBikeRadioButton.isChecked()) && !vehicleModel.getText().toString().equals("") && !plateNumber.getText().toString().equals("") && !vehicleColor.getSelectedItem().toString().equals("Choose a color") && !gainFactorNumber.getText().toString().equals("")){
-
+                    Log.d("ggg", "onClick: giriyorelseif");
                         if( (carRadioButton.isChecked() && !carType.getText().toString().equals(""))   || (motorBikeRadioButton.isChecked() &&  (sideCarNo.isChecked() || sideCarYes.isChecked()))){
 
 

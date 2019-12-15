@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+
 public class Employee {
 
     public static List<Employee> employeeList= new ArrayList<Employee>();
@@ -97,4 +99,12 @@ public class Employee {
     public String toDisplay(){
         return "";
     }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "Name:       "+getName()+"\nId:      "+getId();
+    }
 }
+
+

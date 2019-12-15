@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -43,5 +45,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
 
+        ArrayAdapter<Employee> itemsAdapter = new ArrayAdapter<Employee>(this, android.R.layout.simple_list_item_1, Employee.employeeList);
+        listView.setAdapter(itemsAdapter);
     }
 }
