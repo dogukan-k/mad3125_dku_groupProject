@@ -209,16 +209,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/number_gain_factors"
-        app:layout_constraintStart_toStartOf="@+id/number_gain_factors"
+        app:layout_constraintEnd_toEndOf="@+id/employee_id"
+        app:layout_constraintStart_toStartOf="@+id/employee_id"
         app:layout_constraintTop_toBottomOf="@+id/number_gain_factors">
 
         <RadioButton
             android:id="@+id/car_radio_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Car"
             android:paddingRight="30dp"
+            android:text="Car"
             android:textSize="12sp" />
 
         <RadioButton

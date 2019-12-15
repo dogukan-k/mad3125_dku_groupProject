@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -30,6 +31,8 @@ public class RegisterFormActivity extends AppCompatActivity {
     TextView txtSideCar;
     TextView textCarType;
     EditText vehicleModel;
+
+    String[] employmentTypes = {"Manager","Tester","Programmer"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +70,10 @@ public class RegisterFormActivity extends AppCompatActivity {
         sideCarNo.setVisibility(View.GONE);
         sideCarYes.setVisibility(View.GONE);
         txtSideCar.setVisibility(View.GONE);
+
+        //Employee type gain factor hide
+        gainFactorInfoText.setVisibility(View.GONE);
+        gainFactorNumber.setVisibility(View.GONE);
 
 
 
@@ -128,7 +135,15 @@ public class RegisterFormActivity extends AppCompatActivity {
 
 
 
+        spinner.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                //Employee type gain factor hide
+                gainFactorInfoText.setVisibility(View.VISIBLE);
+                gainFactorNumber.setVisibility(View.VISIBLE);
 
+            }
+        });
 
 
     }
