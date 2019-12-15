@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     EditText searchBar;
     ListView listView;
     Button addButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+
+
+            }
+        });
     }
 
     @Override
@@ -48,4 +59,6 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<Employee> itemsAdapter = new ArrayAdapter<Employee>(this, android.R.layout.simple_list_item_1, Employee.employeeList);
         listView.setAdapter(itemsAdapter);
     }
+
+
 }

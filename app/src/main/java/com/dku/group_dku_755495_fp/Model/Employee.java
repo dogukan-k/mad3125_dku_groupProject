@@ -1,12 +1,13 @@
 package com.dku.group_dku_755495_fp.Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
 import androidx.annotation.NonNull;
 
-public class Employee {
+public class Employee implements Serializable {
 
     public static List<Employee> employeeList= new ArrayList<Employee>();
 
